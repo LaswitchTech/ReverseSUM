@@ -71,7 +71,10 @@ if(!empty($_POST)){
             $iteration=GenerateIteration($count);
             //We iterate
             if($debug){echo "<div>"."<div>Current Count: ".$count." | Number of Elements: ".count($iteration)." | Looking for SUM: ".$value." | SUM of Elements: ".SumIteration($iteration,$array)."</div>";}
-            while(SumIteration($iteration,$array) != $value){
+            while(TRUE){
+                if(SumIteration($iteration,$array) == $value){
+                    array_push($values,$iteration);
+                }
                 if($iteration === IncrementIteration($iteration,(count($array)-1))){
                     break;
                 } else {
@@ -86,9 +89,6 @@ if(!empty($_POST)){
                 //End of While Iteration
             }
             //End of While Iteration
-            if(SumIteration($iteration,$array) == $value){
-                array_push($values,$iteration);
-            }
             unset($iteration);
             if($debug){echo "</div>";};
             $count--;
