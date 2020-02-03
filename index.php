@@ -149,32 +149,27 @@ if(!empty($_POST)){
 
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
-      <div class="container" style="padding-top:25px;">
+      <div class="container pt-5">
         <h1 class="mt-5">Reverse SUM</h1>
         <p class="lead">This PHP code calculates the reverse sum of a given total. This is usefull when you are looking for all the invoices lines that would equal a total on recap for example.</p>
       </div>
       <div class="container">
           <form method="post" action="index.php">
-            <div class="row">
+            <div class="row pb-2">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="totals">Totals (One per Line)</label>
                         <textarea class="form-control" id="totals" name="totals" rows="6"><?php if(isset($_POST['totals'])){ echo $_POST['totals']; }?></textarea>
                     </div>
+                    <?php if(!empty($_POST)){?><div class="p-3 col-md-12<?php if(array_sum($invoice) == array_sum($recap)) { echo " bg-success"; } ?>">Total : $<?=array_sum($recap)?></div><?php } ?>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="lines">Lines (One per Line)</label>
                         <textarea class="form-control" id="lines" name="lines" rows="6"><?php if(isset($_POST['lines'])){ echo $_POST['lines']; }?></textarea>
                     </div>
+                    <?php if(!empty($_POST)){?><div class="p-3 col-md-12<?php if(array_sum($invoice) == array_sum($recap)) { echo " bg-success"; } ?>">Total : $<?=array_sum($invoice)?></div><?php } ?>
                 </div>
-                <?php if(!empty($_POST)){?>
-                    <div class="col-md-6">Total : $<?=array_sum($recap)?></div>
-                    <div class="col-md-6">Total : $<?=array_sum($invoice)?></div>
-                    <?php if(array_sum($invoice) == array_sum($recap)) { ?>
-                        <div class="col-md-12">Both are equal</div>
-                    <?php } ?>
-                <?php } ?>
                 <div class="col-md-12" style="margin-top:5px;">
                     <button type="submit" class="btn btn-primary btn-block">Calculate</button>
                 </div>
