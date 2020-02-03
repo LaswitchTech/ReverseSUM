@@ -1,177 +1,105 @@
 <?php
-$invoice = [
-    304,
-    166,
-    1273.56,
-    177,
-    660,
-    496,
-    1438,
-    361,
-    849.04,
-    1824,
-    266,
-    110,
-    1172,
-    312,
-    1316,
-    788,
-    78,
-    78,
-    20.4,
-    1,
-    90,
-    9.6,
-    2,
-    1,
-    4,
-    1,
-    12,
-    12,
-    1728,
-    2265,
-    1350,
-    1328,
-    92,
-    2375,
-    879,
-    606,
-    60,
-    488,
-    1640,
-    660,
-    1316,
-    880,
-    5,
-    847,
-    1086,
-    1256,
-    932,
-    440,
-    1372,
-    1210,
-    548,
-    353,
-    824,
-    626,
-    488,
-    332,
-    1488,
-];
-$recap = [
-    110,
-    14.6,
-    3033,
-    15744,
-    1728,
-    2122.6,
-    3165,
-    157,
-    137.4,
-    932,
-    4177,
-    5439,
-    2265,
-    266,
-    5,
-];
-$debug="";
-function ReverseSUM($value,$array){
-    global $debug;
-    ini_set('max_execution_time', 10);
-    if (!function_exists('GenerateIteration')) {
-        function GenerateIteration($number){
-            global $debug;
-            $iteration=array();
-            $count = 0;
-            while($count < $number){
-                $count++;
-                array_push($iteration,$count);
+if(!empty($_POST)){
+    $debug="";
+    $invoice = explode( "\n", $_POST['lines'] );
+    $recap = explode( "\n", $_POST['totals'] );
+    function ReverseSUM($value,$array){
+        global $debug;
+        ini_set('max_execution_time', 10);
+        if (!function_exists('GenerateIteration')) {
+            function GenerateIteration($number){
+                global $debug;
+                $iteration=array();
+                $count = 0;
+                while($count < $number){
+                    $count++;
+                    array_push($iteration,$count);
+                }
+                return $iteration;
             }
-            return $iteration;
         }
-    }
-    if (!function_exists('IncrementIteration')) {
-        function IncrementIteration($iteration,$max){
-            global $debug;
-            $count=count($iteration);
-            while($count > 0){
-                if( $iteration[($count-1)] < $max ){
-                    $iteration[($count-1)]++;
-                    if($count != count($iteration)){
-                        $count2=$count;
-                        while($count2 <= count($iteration)){
-                            if($count2 != count($iteration)){
-                                if($debug){
-                                    echo $iteration[$count2]."=".($iteration[($count2-1)]+1)."<br />";
-                                    echo "Count: ".$count."<br />";
-                                    echo "Count2: ".$count2."<br />";
-                                    echo "Max: ".$max."<br />";
+        if (!function_exists('IncrementIteration')) {
+            function IncrementIteration($iteration,$max){
+                global $debug;
+                $count=count($iteration);
+                while($count > 0){
+                    if( $iteration[($count-1)] < $max ){
+                        $iteration[($count-1)]++;
+                        if($count != count($iteration)){
+                            $count2=$count;
+                            while($count2 <= count($iteration)){
+                                if($count2 != count($iteration)){
+                                    if($debug){
+                                        echo $iteration[$count2]."=".($iteration[($count2-1)]+1)."<br />";
+                                        echo "Count: ".$count."<br />";
+                                        echo "Count2: ".$count2."<br />";
+                                        echo "Max: ".$max."<br />";
+                                    }
+                                    // if( ($iteration[$count2] < $max) ){
+                                        $iteration[$count2]=($iteration[($count2-1)]+1);
+                                        if($debug){ echo $iteration[$count2]."<br />"; }
+                                    // }
+                                } else {
+                                    break;
                                 }
-                                // if( ($iteration[$count2] < $max) ){
-                                    $iteration[$count2]=($iteration[($count2-1)]+1);
-                                    if($debug){ echo $iteration[$count2]."<br />"; }
-                                // }
-                            } else {
-                                break;
+                                $count2++;
                             }
-                            $count2++;
                         }
+                        break;
                     }
+                    $max--;
+                    $count--;
+                }
+                return $iteration;
+            }
+        }
+        if (!function_exists('SumIteration')) {
+            function SumIteration($iteration,$array){
+                global $debug;
+                $result=array();
+                foreach($iteration as $key){
+                    array_push($result,$array[$key]);
+                }
+                return array_sum($result);
+            }
+        }
+        $count=count($array);
+        $count=3;
+        $values=array();
+        while($count > 0){
+            //Init of While Iteration
+            $iteration=GenerateIteration($count);
+            //We iterate
+            if($debug){echo "<div>"."<div>Current Count: ".$count." | Number of Elements: ".count($iteration)." | Looking for SUM: ".$value." | SUM of Elements: ".SumIteration($iteration,$array)."</div>";}
+            while(SumIteration($iteration,$array) != $value){
+                if($iteration === IncrementIteration($iteration,(count($array)-1))){
                     break;
+                } else {
+                    $iteration=IncrementIteration($iteration,(count($array)-1));
+                    if($debug){
+                        echo "<div>";
+                        print_r($iteration);
+                        echo "Incrementing To: ".SumIteration($iteration,$array);
+                        echo "</div>";
+                    }
                 }
-                $max--;
-                $count--;
-            }
-            return $iteration;
-        }
-    }
-    if (!function_exists('SumIteration')) {
-        function SumIteration($iteration,$array){
-            global $debug;
-            $result=array();
-            foreach($iteration as $key){
-                array_push($result,$array[$key]);
-            }
-            return array_sum($result);
-        }
-    }
-    $count=count($array);
-    $count=3;
-    $values=array();
-    while($count > 0){
-        //Init of While Iteration
-        $iteration=GenerateIteration($count);
-        //We iterate
-        if($debug){echo "<div>"."<div>Current Count: ".$count." | Number of Elements: ".count($iteration)." | Looking for SUM: ".$value." | SUM of Elements: ".SumIteration($iteration,$array)."</div>";}
-        while(SumIteration($iteration,$array) != $value){
-            if($iteration === IncrementIteration($iteration,(count($array)-1))){
-                break;
-            } else {
-                $iteration=IncrementIteration($iteration,(count($array)-1));
-                if($debug){
-                    echo "<div>";
-                    print_r($iteration);
-                    echo "Incrementing To: ".SumIteration($iteration,$array);
-                    echo "</div>";
-                }
+                //End of While Iteration
             }
             //End of While Iteration
+            if(SumIteration($iteration,$array) == $value){
+                array_push($values,$iteration);
+            }
+            unset($iteration);
+            if($debug){echo "</div>";};
+            $count--;
         }
-        //End of While Iteration
-        if(SumIteration($iteration,$array) == $value){
-            array_push($values,$iteration);
-        }
-        unset($iteration);
-        if($debug){echo "</div>";};
-        $count--;
+        return $values;
     }
-    return $values;
-}
-if($debug){
-    echo "Sum of Invoice: ".array_sum($invoice)." and has ".count($invoice)." elements<br />";
-    echo "Sum of Recap: ".array_sum($recap)." and has ".count($recap)." elements<br />";
-    if(array_sum($invoice) == array_sum($recap)) { echo "both are equal<br />"; }
+    if($debug){
+        echo "Sum of Invoice: ".array_sum($invoice)." and has ".count($invoice)." elements<br />";
+        echo "Sum of Recap: ".array_sum($recap)." and has ".count($recap)." elements<br />";
+        if(array_sum($invoice) == array_sum($recap)) { echo "both are equal<br />"; }
+    }
 }
 ?>
 <!doctype html>
@@ -180,8 +108,7 @@ if($debug){
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v3.8.6">
+    <meta name="author" content="Louis Ouellet, https://github.com/LouisOuellet">
     <title>Reverse SUM</title>
 
     <!-- Bootstrap core CSS -->
@@ -222,34 +149,71 @@ if($debug){
 
     <!-- Begin page content -->
     <main role="main" class="flex-shrink-0">
-      <div class="container" style="padding:25px;">
+      <div class="container" style="padding-top:25px;">
         <h1 class="mt-5">Reverse SUM</h1>
-        <p class="lead">This </p>
-        <p>Back to <a href="/docs/4.4/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
-        <?php foreach($recap as $line => $value){ ?>
-          <?php if($line>0){?>
-          <table border="1">
-              <tr>
-                  <th colspan="2" style="text-align:left;">Line <?=$line?> - <?=$value?></th>
-              </tr>
-              <tr>
-                  <th>Iteration</th>
-                  <th>Values</th>
-              </tr>
-              <?php foreach(ReverseSUM($value,$invoice) as $iteration => $values){?>
-                  <tr>
-                      <td><?=$iteration?></td>
-                      <td>
-                          <?php foreach($values as $array){?>
-                              <?=($array +1)?><br />
-                          <?php } ?>
-                      </td>
-                  </tr>
-              <?php } ?>
-          </table>
-          <?php } ?>
-        <?php } ?>
+        <p class="lead">This PHP code calculates the reverse sum of a given total. This is usefull when you are looking for all the invoices lines that would equal a total on recap for example.</p>
       </div>
+      <div class="container">
+          <form method="post" action="index.php">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="totals">Totals (One per Line)</label>
+                        <textarea class="form-control" id="totals" name="totals" rows="6"><?php if(isset($_POST['totals'])){ echo $_POST['totals']; }?></textarea>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lines">Lines (One per Line)</label>
+                        <textarea class="form-control" id="lines" name="lines" rows="6"><?php if(isset($_POST['lines'])){ echo $_POST['lines']; }?></textarea>
+                    </div>
+                </div>
+                <?php if(!empty($_POST)){?>
+                    <div class="col-md-6">Total : $<?=array_sum($recap)?></div>
+                    <div class="col-md-6">Total : $<?=array_sum($invoice)?></div>
+                    <?php if(array_sum($invoice) == array_sum($recap)) { ?>
+                        <div class="col-md-12">Both are equal</div>
+                    <?php } ?>
+                <?php } ?>
+                <div class="col-md-12" style="margin-top:5px;">
+                    <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+                </div>
+            </div>
+          </form>
+      </div>
+      <?php if(!empty($_POST)){?>
+      <div class="container" style="padding:25px;">
+          <div class="row">
+              <?php if(array_sum($invoice) == array_sum($recap)) { ?>
+                <?php foreach($recap as $line => $value){ ?>
+                  <table class="table table-striped table-bordered table-hover table-sm">
+                    <thead class="thead-dark">
+                      <tr class="bg-info">
+                          <th colspan="2" class="bg-info" style="text-align:left;">Line <?=($line +1)?> - <?=$value?></th>
+                      </tr>
+                      <tr>
+                          <th style="width:20%;">Iteration</th>
+                          <th>Values</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php foreach(ReverseSUM($value,$invoice) as $iteration => $values){?>
+                          <tr>
+                              <td><?=($iteration +1)?></td>
+                              <td>
+                                  <?php foreach($values as $array){?>
+                                      <p>Line <?=($array +1)?> Value : <?= $invoice[$array]?></p>
+                                  <?php } ?>
+                              </td>
+                          </tr>
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                <?php } ?>
+              <?php } ?>
+          </div>
+      </div>
+      <?php } ?>
     </main>
 
     <footer class="footer mt-auto py-3" style="padding:10px;background-color:#ccc;">
