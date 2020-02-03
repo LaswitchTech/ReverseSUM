@@ -5,4 +5,4 @@ This PHP code calculates the reverse sum of a given total. This is usefull when 
 Simply upload to a web server and direct your browser to it.
 
 ## Demo
-[Demo Site] (http://sum.albgroupe.com)
+http://sum.albgroupe.com: Demo Site
