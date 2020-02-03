@@ -12,8 +12,8 @@ if(!empty($_POST)){
                 $iteration=array();
                 $count = 0;
                 while($count < $number){
-                    $count++;
                     array_push($iteration,$count);
+                    $count++;
                 }
                 return $iteration;
             }
@@ -35,10 +35,8 @@ if(!empty($_POST)){
                                         echo "Count2: ".$count2."<br />";
                                         echo "Max: ".$max."<br />";
                                     }
-                                    // if( ($iteration[$count2] < $max) ){
-                                        $iteration[$count2]=($iteration[($count2-1)]+1);
-                                        if($debug){ echo $iteration[$count2]."<br />"; }
-                                    // }
+                                    $iteration[$count2]=($iteration[($count2-1)]+1);
+                                    if($debug){ echo $iteration[$count2]."<br />"; }
                                 } else {
                                     break;
                                 }
@@ -58,6 +56,7 @@ if(!empty($_POST)){
                 global $debug;
                 $result=array();
                 foreach($iteration as $key){
+                    if($debug){ print_r($iteration);echo "<br />"; }
                     array_push($result,$array[$key]);
                 }
                 return array_sum($result);
