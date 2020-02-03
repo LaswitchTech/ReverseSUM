@@ -37,8 +37,6 @@ if(!empty($_POST)){
                                     }
                                     $iteration[$count2]=($iteration[($count2-1)]+1);
                                     if($debug){ echo $iteration[$count2]."<br />"; }
-                                } else {
-                                    break;
                                 }
                                 $count2++;
                             }
@@ -63,7 +61,11 @@ if(!empty($_POST)){
             }
         }
         $count=count($array);
-        $count=3;
+        if(isset($_POST['max'])){
+            if($count>$_POST['max']){$count = $_POST['max'];}
+        } else {
+            if($count>3){$count = 3;}
+        }
         $values=array();
         while($count > 0){
             //Init of While Iteration
@@ -169,6 +171,13 @@ if(!empty($_POST)){
                     </div>
                     <?php if(!empty($_POST)){?><div class="p-3 col-md-12<?php if(array_sum($invoice) == array_sum($recap)) { echo " bg-success"; } ?>">Total : $<?=array_sum($invoice)?></div><?php } ?>
                 </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="max">Maxium amount of values per iteration</label>
+                        <input type="number" class="form-control" id="max" name="max" placeholder="Maxium amount of values per iteration" value="<?php if(isset($_POST['max'])) { echo $_POST['max']; } else { echo 3;}?>">
+                        <p class="text-muted">The higher the value the longer it will take. Long request might timeout.</p>
+                    </div>
+                </div>
                 <div class="col-md-12" style="margin-top:5px;">
                     <button type="submit" class="btn btn-primary btn-block">Calculate</button>
                 </div>
@@ -178,7 +187,6 @@ if(!empty($_POST)){
       <?php if(!empty($_POST)){?>
       <div class="container" style="padding:25px;">
           <div class="row">
-              <?php if(array_sum($invoice) == array_sum($recap)) { ?>
                 <?php foreach($recap as $line => $value){ ?>
                   <table class="table table-striped table-bordered table-hover table-sm">
                     <thead class="thead-dark">
@@ -204,7 +212,6 @@ if(!empty($_POST)){
                     </tbody>
                   </table>
                 <?php } ?>
-              <?php } ?>
           </div>
       </div>
       <?php } ?>
