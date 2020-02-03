@@ -5,7 +5,7 @@ if(!empty($_POST)){
     $recap = explode( "\n", $_POST['totals'] );
     function ReverseSUM($value,$array){
         global $debug;
-        ini_set('max_execution_time', 10);
+        ini_set('max_execution_time', 30);
         if (!function_exists('GenerateIteration')) {
             function GenerateIteration($number){
                 global $debug;
@@ -175,7 +175,7 @@ if(!empty($_POST)){
                     <div class="form-group">
                         <label for="max">Maxium amount of values per iteration</label>
                         <input type="number" class="form-control" id="max" name="max" placeholder="Maxium amount of values per iteration" value="<?php if(isset($_POST['max'])) { echo $_POST['max']; } else { echo 3;}?>">
-                        <p class="text-muted">The higher the value the longer it will take. Long request might timeout.</p>
+                        <p class="text-muted">The higher the value the longer it will take. Long request might timeout(30 Seconds).</p>
                     </div>
                 </div>
                 <div class="col-md-12" style="margin-top:5px;">
