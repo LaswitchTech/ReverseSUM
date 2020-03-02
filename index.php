@@ -174,7 +174,6 @@ if(!empty($_POST)){
                         <p class="text-muted">
                             The higher the value the longer it will take.<br />
                             Long request might timeout(30 Seconds).<br />
-                            Tested with a maximum of 5 for this server.<br />
                             Enter 0 for no limit.
                         </p>
                     </div>
