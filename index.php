@@ -210,8 +210,13 @@ if(!empty($_POST)){
                                       <?php } ?>
                                   </td>
                                   <td>
-                                      <input type="hidden" style="display:none;" name="Selection" value="<?=trim($selection,',')?>">
-                                      <button type="submit" name="Remove" class="btn btn-danger">Remove</button>
+                                      <form method="post">
+                                          <input type="hidden" style="display:none;" name="Selection" value="<?=trim($selection,',')?>">
+                                          <textarea style="display:none;" name="lines"><?=$_POST['lines']?></textarea>
+                                          <textarea style="display:none;" name="totals"><?=$_POST['totals']?></textarea>
+                                          <input type="hidden" style="display:none;" name="max" value="<?=$_POST['max']?>">
+                                          <button type="submit" name="Remove" class="btn btn-danger">Remove</button>
+                                      </form>
                                   </td>
                               </tr>
                           <?php } ?>
