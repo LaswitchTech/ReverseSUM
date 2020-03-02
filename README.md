@@ -17,3 +17,4 @@ Simply upload to a web server and direct your browser to it.
 ### Version 1.1
 #### Features
  * 2020-03-02 - Adding a "Remove" button to remove the selected result from the "Lines" field.
+ * 2020-03-02 - Adding a "No Limit" limit by setting Max Iteration to 0.

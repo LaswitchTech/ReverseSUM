@@ -62,9 +62,7 @@ if(!empty($_POST)){
             }
             $count=count($array);
             if((isset($_POST['max'])) and ($_POST['max'] != "")){
-                if($count>$_POST['max']){$count = $_POST['max'];}
-            } else {
-                if($count>3){$count = 3;}
+                if(($count>$_POST['max'])&&($_POST['max']!=0)){$count = $_POST['max'];}
             }
             $values=array();
             while($count > 0){
@@ -176,7 +174,8 @@ if(!empty($_POST)){
                         <p class="text-muted">
                             The higher the value the longer it will take.<br />
                             Long request might timeout(30 Seconds).<br />
-                            Tested with a maximum of 5 for this server.
+                            Tested with a maximum of 5 for this server.<br />
+                            Enter 0 for no limit.
                         </p>
                     </div>
                 </div>
