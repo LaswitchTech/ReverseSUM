@@ -138,7 +138,7 @@ if(!empty($_POST)){
     <main role="main" class="flex-shrink-0">
       <div class="container pt-5">
         <h1 class="mt-5">Reverse SUM</h1>
-        <p class="lead">This PHP code calculates the reverse sum of a given total. This is usefull when you are looking for all the invoices lines that would equal a total on recap for example.</p>
+        <p class="lead">This PHP code calculates the reverse sum of a given total. This is usefull when you are looking for all the invoices lines that would equal a total on a recap for example.</p>
       </div>
       <form method="post">
           <div class="container">
@@ -169,12 +169,11 @@ if(!empty($_POST)){
                 </div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="max">Maxium amount of values per iteration</label>
+                        <label for="max">Maxium amount of values per iteration</label><span class="text-muted ml-2">Enter 0 for Unlimited</span>
                         <input type="number" class="form-control" id="max" name="max" placeholder="Maxium amount of values per iteration" value="<?php if(isset($_POST['max'])) { echo $_POST['max']; } else { echo 3;}?>">
                         <p class="text-muted">
                             The higher the value the longer it will take.<br />
-                            Long request might timeout(30 Seconds).<br />
-                            Enter 0 for no limit.
+                            Long request might timeout(30 Seconds).
                         </p>
                     </div>
                 </div>
