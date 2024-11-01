@@ -1,0 +1,63 @@
+.timeline {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.timeline::before {
+    border-radius: 0.25rem;
+    background-color: var( --bs-light );
+    bottom: 1rem;
+    content: "";
+    left: 31px;
+    margin: 0;
+    position: absolute;
+    top: 1rem;
+    width: 4px;
+}
+.timeline > div {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    min-height: 30px;
+    position: relative;
+}
+.timeline > div::before, .timeline > div::after {
+    content: "";
+    display: table;
+}
+.timeline > div > .timeline-item {
+    margin-left: 60px;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+}
+.timeline > div > .timeline-item > .tools {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    padding: 1rem;
+    display: flex;
+}
+.timeline > div > .timeline-item > .tools > * {
+    margin-left: 5px;
+}
+.timeline > div > i {
+    background-color: var(--bs-secondary);
+    border-radius: 50%;
+    font-size: 16px;
+    height: 30px;
+    left: 18px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 30px;
+}
+.timeline > .time-label > span {
+    border-radius: 4px;
+    background-color: transparent;
+    display: inline-block;
+    font-weight: 600;
+    padding: 5px;
+}

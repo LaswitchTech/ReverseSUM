@@ -1,0 +1,25 @@
+// // Colors
+
+// $count: 0;
+// @while $count < 10 {
+//   $index: 10 * $count;
+//   $value: calc($count / 10);
+
+//   .text-black-#{$index} {
+//     color: rgba(0, 0, 0, $value) !important;
+//   }
+
+//   $count: $count + 1;
+// }
+
+// $count: 0;
+// @while $count < 4 {
+//   $index: 25 * $count;
+//   $value: calc($index / 100);
+
+//   .text-black-#{$index} {
+//     color: rgba(0, 0, 0, $value) !important;
+//   }
+
+//   $count: $count + 1;
+// }

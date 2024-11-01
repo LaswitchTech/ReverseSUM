@@ -1,0 +1,52 @@
+### RoadMap
+- [X] Initialize the project
+    - [X] Add `.editorconfig`
+    - [X] Add `.gitignore`
+    - [X] Add `.github/ISSUE_TEMPLATE/bug_report.md`
+    - [X] Add `.github/ISSUE_TEMPLATE/feature_request.md`
+    - [X] Add `.github/no-response.yml`
+    - [X] Add `SECURITY.md`
+    - [X] Add `TODO`
+    - [X] Add `VERSION`
+    - [X] Add `dist/img/logo.png`
+    - [X] Update `README.md`
+    - [X] Create directory `src`
+    - [X] Create directory `docs`
+    - [X] Create directory `example`
+    - [X] Initialize Composer `composer init`
+    - [X] Dump autoload `composer dump-autoload`
+    - [X] Update requirements in `config/requirements.cfg`
+    - [X] Perform initial push to GitHub
+    - [X] Create `stable` branch from `dev` branch on GitHub
+    - [X] Set `stable` branch as default branch on GitHub
+    - [X] Create a package on Packagist
+    - [X] Create a release on GitHub
+- [X] Create the core class
+    - [X] Create the `Core` class
+    - [X] Create the `Core` class constructor
+    - [X] Create the `Core` class destructor
+    - [X] Create the `Core` class methods
+    - [X] Create the `Core` class properties
+    - [X] Create the `Core` class constants
+    - [X] Create the `Core` class annotations
+- [X] Create the `isInstalled` method in the `Core` class (optional)
+- [X] Integrations
+    - [X] Integration with coreLogger
+    - [X] Integration with coreInstaller (isInstalled method)
+    - [X] Integration with coreCLI
+    - [X] Integration with coreAPI
+    - [X] Integration with coreRouter
+- [X] Documentations
+    - [X] Create the `docs/usage.md` file
+    - [X] Create the directory `docs/methods`
+    - [X] Create a directory for each class in `docs/methods`
+    - [X] Create a markdown file for each method in `docs/methods/{class}`
+    - [X] Add the list of properties in `docs/usage.md`
+- [X] Clean up the code
+    - [X] Remove unnecessary files
+    - [X] Remove unnecessary code
+    - [X] Remove unnecessary comments
+    - [X] Remove unnecessary dependencies
+    - [X] Fix coding standards
+    - [X] Add method annotations
+- [X] Ready to publish

@@ -1,0 +1,21 @@
+{
+    "name": "laswitchtech/core-database",
+    "description": "Database Library for the Laswitch Core Framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LaswitchTech\\coreDatabase\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Louis Ouellet",
+            "email": "louis_ouellet@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "laswitchtech/core-net": "^1.0"
+    }
+}

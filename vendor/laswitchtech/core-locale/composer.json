@@ -1,0 +1,21 @@
+{
+    "name": "laswitchtech/core-locale",
+    "description": "Locale Library for the Laswitch Core Framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LaswitchTech\\coreLocale\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Louis Ouellet",
+            "email": "louis_ouellet@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "laswitchtech/core-logger": "^1.0"
+    }
+}

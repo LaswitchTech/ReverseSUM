@@ -1,0 +1,52 @@
+// IDE
+
+.ide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: auto;
+    position: relative;
+    border-radius: $border-radius;
+}
+
+.ide *{
+    // Text & Colors
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 20px;
+    white-space: pre;
+    // Sizing
+    padding: 10px;
+    border: none;
+}
+
+.ide div.ide-lines {
+    // Text & Colors
+    background-color: $light;
+    color: $dark;
+    text-align: right;
+    // Sizing
+    width: 50px;
+    // Positioning
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    // Extra
+    user-select: none;
+}
+
+.ide textarea.ide-input {
+    // Text & Colors
+    background-color: $dark;
+    color: $light;
+    text-align: left;
+    // Sizing
+    flex-grow: 1;
+    // Positioning
+    z-index: 0;
+    // Extra
+    overflow-wrap: normal;
+    overflow-y: hidden;
+    overflow-x: auto;
+    resize: none;
+}

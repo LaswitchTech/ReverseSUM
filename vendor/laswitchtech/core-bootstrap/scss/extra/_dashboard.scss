@@ -1,0 +1,57 @@
+.dashboard.edit { margin: 8px; }
+.dashboard .row {
+  margin: 0px;
+  padding-right: 12px;
+  padding-left: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.dashboard .col { padding: 12px; }
+.dashboard .col > * { margin-top: 24px; }
+.dashboard .col > *:first-child { margin-top: 0px; }
+.dashboard.edit, .dashboard.edit .row, .dashboard.edit .col {
+  border-radius: 0.375rem;
+  padding: 12px;
+  border-width: 2px;
+  border-style: dotted;
+  border-color:var(--bs-primary);
+}
+.dashboard.edit .col [data-widget] { cursor: pointer; }
+.dashboard.edit .placeholder { display: block; }
+.dashboard .placeholder {
+  background-color: var(--bs-light);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  width: 100%;
+  display: none;
+  cursor: pointer;
+}
+.dashboard .placeholder:hover {
+  background-color: var(--bs-primary);
+}
+.dashboard .placeholder div {
+  border-style: dotted;
+  border-width: 2px;
+  border-radius: var(--bs-border-radius);
+  border-color: var(--bs-dark);
+  font-size:2.5rem;
+  color: var(--bs-dark);
+  text-align: center;
+  margin: 0.5rem;
+}
+.dashboard .placeholder.row div, .dashboard .placeholder.col div {
+  margin: 0rem;
+}
+.dashboard .placeholder:hover div {
+  border-color: var(--bs-light);
+  color: var(--bs-light);
+}
+.dashboard .delete, .dashboard .delete > *, .dashboard .delete > * > * {
+  background-color: var(--bs-danger)!important;
+  color: var(--bs-light)!important;
+  opacity: 50%!important;
+}
+.dashboard.edit .row > *.handleCtn {
+  padding: 0px;
+  margin-bottom: 12px;
+}

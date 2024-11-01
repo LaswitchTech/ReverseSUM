@@ -1,0 +1,466 @@
+// Quartz 5.2.2
+// Bootswatch
+
+
+// Variables
+
+$frosted-opacity: .3 !default;
+
+:root {
+  color-scheme: dark;
+}
+
+// Mixins
+
+@mixin glass($opacity: $frosted-opacity, $bg: $white) {
+  border: none;
+  box-shadow: inset 1px 1px $border-color, inset -1px -1px rgba($white, .1), $box-shadow;
+  @include frost($opacity, $bg);
+
+  a {
+    color: $card-color;
+  }
+
+  .text-muted {
+    color: rgba($card-color, .7);
+  }
+}
+
+@mixin frost($opacity: $frosted-opacity, $bg: $white) {
+  background-color: transparent;
+  background-image: linear-gradient(125deg, rgba($bg, ($opacity)), rgba($bg, ($opacity - .1)) 70%);
+  backdrop-filter: blur(5px);
+}
+
+// Body
+
+body {
+  background-image: url("img/blue-mountain.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+}
+
+// Tables
+
+.table-secondary {
+  --bs-table-hover-color: $white;
+}
+
+// Buttons
+
+.btn {
+  &-secondary {
+    color: $white;
+    border: none;
+
+    &:hover,
+    &:focus {
+      color: $white;
+    }
+
+    &.disabled {
+      color: $white;
+    }
+  }
+}
+
+.btn-group > .btn:not(:first-child),
+.btn-group > .btn-group:not(:first-child) {
+  margin-left: 0;
+}
+
+.btn-group-vertical > .btn:not(:first-child),
+.btn-group-vertical > .btn-group:not(:first-child) {
+  margin-top: 0;
+}
+
+.btn-link, a {
+  text-decoration: none;
+}
+
+.bg-light .btn {
+  background-color: rgba($black, .2);
+}
+
+// Forms
+
+.form-control {
+  @include glass();
+}
+
+.input-group-text,
+.form-control::file-selector-button {
+  background-color: transparent;
+  background-image: linear-gradient(125deg, rgba($white, .3), rgba($white, .2) 70%);
+  border: none;
+  backdrop-filter: blur(5px);
+}
+
+.input-group-text {
+  box-shadow: inset 1px 1px $border-color, inset -1px -1px rgba($white, .1);
+}
+
+.input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: 0;
+  border-left: none;
+}
+
+.input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),
+.input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n + 3) {
+  border-right: none;
+}
+
+.form-select:not([multiple]) {
+  transition: border-color .15s ease-in-out;
+
+  option {
+    color: $black;
+  }
+}
+
+.bg-light .form-control {
+  color: $gray-800;
+  border-color: rgba($black, .2);
+
+  &::placeholder {
+    color: rgba($black, .2);
+  }
+}
+
+// DataTables
+.dt-button-collection {
+  background-color: transparent !important;
+  background-image: none !important;
+  backdrop-filter: none !important;
+  border-radius: $border-radius !important;
+  padding: 0 !important;
+}
+
+.dt-button-collection .dropdown-menu {
+  border-radius: $border-radius !important;
+}
+
+.dt-button-collection .dropdown-item {
+  border-radius: $border-radius !important;
+}
+
+// Navs
+
+.dropdown-menu {
+  @include glass(.3);
+}
+
+.nav-tabs {
+  .nav-link {
+    transition: none;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      isolation: auto;
+    }
+
+    &,
+    &.disabled {
+      background-color: $progress-bg;
+    }
+  }
+
+  .nav-item:first-child > .nav-link {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+
+  .nav-item:last-child > .nav-link {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+
+  .nav-item .nav-link.active,
+  .nav-item.show .nav-link {
+    @include glass(1, $white);
+    border-radius: $border-radius;
+    transform: scale(1.1);
+
+    &:hover,
+    &:focus {
+      color: $gray-800;
+    }
+  }
+
+  .dropdown-menu {
+    border-radius: $border-radius;
+  }
+}
+
+.nav-pills {
+  .nav-link {
+    transition: none;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      isolation: auto;
+    }
+  }
+}
+
+// Indicators
+
+.alert {
+  @include glass();
+  position: relative;
+  overflow: hidden;
+  color: $white;
+
+  @each $color, $value in $theme-colors {
+    $opacity: .7;
+    &-#{$color}::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: .5rem;
+      height: 100%;
+      content: "";
+      background-color: $value;
+    }
+  }
+
+  .alert-link {
+    color: $card-color;
+  }
+}
+
+.badge {
+  &.bg-secondary {
+    --bs-bg-opacity: .4;
+  }
+
+  &.bg-light {
+    color: $gray-800;
+  }
+}
+
+// Containers
+
+.list-group {
+  @include glass();
+}
+
+.card {
+  @include glass();
+
+  @each $color, $value in $theme-colors {
+    @if ($color == secondary) {
+      --bs-secondary-rgb: transparent;
+    } @else {
+      &.bg-#{$color} {
+        background-image: none;
+      }
+    }
+  }
+
+  &.bg-light {
+    .card-header,
+    .card-body {
+      color: $gray-800;
+    }
+  }
+
+  &.border {
+    @each $color, $value in $theme-colors {
+      &-#{$color} {
+        @include glass();
+
+        .card-header {
+          background-color: $value !important;
+          border-bottom: none;
+
+          @if ($color == light) {
+            color: $gray-800;
+          }
+        }
+      }
+    }
+  }
+
+  &-header {
+    font-weight: $headings-font-weight;
+  }
+}
+
+.accordion-item {
+  @include glass();
+  box-shadow: none;
+}
+
+.toast {
+  @include glass();
+}
+
+.popover {
+  @include glass();
+
+  &-header {
+    border-bottom-color: $border-color;
+  }
+}
+
+.tooltip {
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  @include glass();
+}
+
+.offcanvas {
+  @include glass();
+}
+
+// Breadcumbs
+
+.breadcrumb {
+  font-size: $font-size-sm;
+  font-weight: 500;
+  border: 1px solid $gray-300;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  &-item {
+    padding: 1rem .5rem 1rem 0;
+  }
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  padding-right: 1rem;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+}
+
+// Background Glass
+
+.bg-glass {
+  @include glass();
+  background-color: transparent !important;
+}
+
+.text-bg-glass {
+  @include glass();
+  background-color: transparent !important;
+  color: $white;
+}
+
+// Card Title
+.card-title {
+  margin: 0px;
+}
+
+// Leaflet
+.leaflet-map a {
+  color: $dark;
+}
+
+// Select2
+.select2-selection {
+  background-color: transparent !important;
+  border: 1px solid $border-color;
+}
+.select2-search:not(.select2-search--inline), .select2-results {
+  background-color: rgba(0,0,0,0.5) !important;
+}
+.select2-container--bootstrap-5 .select2-selection {
+  @include glass();
+  background-color: transparent !important;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+}
+.input-group>.btn~.select2-container--bootstrap-5 .select2-selection, .input-group>.dropdown-menu~.select2-container--bootstrap-5 .select2-selection, .input-group>.input-group-text~.select2-container--bootstrap-5 .select2-selection {
+  border-left: 0;
+}
+.select2-container--bootstrap-5 .select2-selection--single .select2-selection__rendered {
+  padding: 5px 0px;
+  color: $white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 30px);
+}
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__clear, .select2-container--bootstrap-5 .select2-selection--single .select2-selection__clear {
+  position: absolute;
+  top: 50%;
+  right: 2.25rem;
+  width: .75rem;
+  height: .75rem;
+  padding: .25em;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") 50%/.75rem auto no-repeat;
+  transform: translateY(-50%);
+}
+.select2-container--bootstrap-5 .select2-selection--single {
+  padding: .375rem 2.25rem .375rem .75rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 16px 12px;
+}
+.select2-container--bootstrap-5.select2-container--focus .select2-selection, .select2-container--bootstrap-5.select2-container--open .select2-selection {
+  border-color: rgba($primary,.25);
+  box-shadow: 0 0 0 $border-radius rgba($primary,.25);
+}
+.select2-container--bootstrap-5 .select2-dropdown {
+  @include glass();
+  background-color: transparent !important;
+  z-index: 1056;
+  overflow: hidden;
+  color: $text-muted;
+  border-color: $primary;
+  border-radius: $border-radius;
+}
+.select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field {
+  border-radius: $border-radius;
+}
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--highlighted {
+  color: $text-muted;
+}
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__message {
+  color: $text-muted;
+}
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--highlighted {
+  color: $text-muted;
+}
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--highlighted {
+  color: $white;
+  background-color: rgba($white, 0.4);
+}
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true]:not(.select2-results__option--highlighted) {
+  color: #fff;
+  background-color: $primary;
+}
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
+  color: $white;
+  border: 1px solid $border-color;
+  background-color: $primary;
+}
+.select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice .select2-selection__choice__remove {
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") 50%/.75rem auto no-repeat;
+}
+
+// // Snap Scrolling
+// html {
+//     scroll-behavior: smooth;
+// }
+
+// main[data-snap-scroll="true"] {
+//     scroll-snap-type: y mandatory;
+//     overflow-y: auto;
+//     height: 100vh;
+// }
+
+// main[data-snap-scroll="true"] section {
+//     scroll-snap-align: start;
+//     scroll-snap-stop: always;
+// }

@@ -1,0 +1,443 @@
+{
+    "packages": [
+        {
+            "name": "laswitchtech/core-base",
+            "version": "v1.1.6",
+            "version_normalized": "1.1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreBase.git",
+                "reference": "588e6f778aa6ca3725c7ba92b602826db692e5f9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreBase/zipball/588e6f778aa6ca3725c7ba92b602826db692e5f9",
+                "reference": "588e6f778aa6ca3725c7ba92b602826db692e5f9",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-csrf": "^1.0",
+                "laswitchtech/core-database": "^1.0"
+            },
+            "time": "2024-08-01T23:41:42+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreBase\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Base Libraries for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreBase/issues",
+                "source": "https://github.com/LaswitchTech/coreBase/tree/v1.1.6"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-base"
+        },
+        {
+            "name": "laswitchtech/core-bootstrap",
+            "version": "v1.0.13",
+            "version_normalized": "1.0.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreBootstrap.git",
+                "reference": "6a80647d00a6c245e0d52fa41451277a5c42d1be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreBootstrap/zipball/6a80647d00a6c245e0d52fa41451277a5c42d1be",
+                "reference": "6a80647d00a6c245e0d52fa41451277a5c42d1be",
+                "shasum": ""
+            },
+            "time": "2024-11-01T16:58:40+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreBootstrap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Bootstrap Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreBootstrap/issues",
+                "source": "https://github.com/LaswitchTech/coreBootstrap/tree/v1.0.13"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-bootstrap"
+        },
+        {
+            "name": "laswitchtech/core-configurator",
+            "version": "v1.1.3",
+            "version_normalized": "1.1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreConfigurator.git",
+                "reference": "94e7ba1fda0dd66e94e0aa39d3230b99f78daa65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreConfigurator/zipball/94e7ba1fda0dd66e94e0aa39d3230b99f78daa65",
+                "reference": "94e7ba1fda0dd66e94e0aa39d3230b99f78daa65",
+                "shasum": ""
+            },
+            "time": "2024-06-26T23:53:53+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreConfigurator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Configurator Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreConfigurator/issues",
+                "source": "https://github.com/LaswitchTech/coreConfigurator/tree/v1.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-configurator"
+        },
+        {
+            "name": "laswitchtech/core-csrf",
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreCSRF.git",
+                "reference": "4f0e3c5485e060234b0dd159775d01e2b21de092"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreCSRF/zipball/4f0e3c5485e060234b0dd159775d01e2b21de092",
+                "reference": "4f0e3c5485e060234b0dd159775d01e2b21de092",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-logger": "^1.0"
+            },
+            "time": "2024-06-27T00:08:04+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreCSRF\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "CSRF Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreCSRF/issues",
+                "source": "https://github.com/LaswitchTech/coreCSRF/tree/v1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-csrf"
+        },
+        {
+            "name": "laswitchtech/core-database",
+            "version": "v1.0.5",
+            "version_normalized": "1.0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreDatabase.git",
+                "reference": "14a28a76c410135a8f8bc7e58c75e04f316593ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreDatabase/zipball/14a28a76c410135a8f8bc7e58c75e04f316593ca",
+                "reference": "14a28a76c410135a8f8bc7e58c75e04f316593ca",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-net": "^1.0"
+            },
+            "time": "2024-08-30T17:40:50+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreDatabase\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Database Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreDatabase/issues",
+                "source": "https://github.com/LaswitchTech/coreDatabase/tree/v1.0.5"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-database"
+        },
+        {
+            "name": "laswitchtech/core-locale",
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreLocale.git",
+                "reference": "e1152540bbb9d0c21a2e5aa7f62d94d21bfc4c22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreLocale/zipball/e1152540bbb9d0c21a2e5aa7f62d94d21bfc4c22",
+                "reference": "e1152540bbb9d0c21a2e5aa7f62d94d21bfc4c22",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-logger": "^1.0"
+            },
+            "time": "2024-07-23T19:21:09+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreLocale\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Locale Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreLocale/issues",
+                "source": "https://github.com/LaswitchTech/coreLocale/tree/v1.0.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-locale"
+        },
+        {
+            "name": "laswitchtech/core-logger",
+            "version": "v1.0.4",
+            "version_normalized": "1.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreLogger.git",
+                "reference": "6201482b1004df75a707cc2223c22742896c445a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreLogger/zipball/6201482b1004df75a707cc2223c22742896c445a",
+                "reference": "6201482b1004df75a707cc2223c22742896c445a",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-configurator": "^1.0"
+            },
+            "time": "2024-07-18T17:54:55+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreLogger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Logger Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreLogger/issues",
+                "source": "https://github.com/LaswitchTech/coreLogger/tree/v1.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-logger"
+        },
+        {
+            "name": "laswitchtech/core-net",
+            "version": "v1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreNet.git",
+                "reference": "2abe7a9e18fc9abf6b90e5477299d3147d36a762"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreNet/zipball/2abe7a9e18fc9abf6b90e5477299d3147d36a762",
+                "reference": "2abe7a9e18fc9abf6b90e5477299d3147d36a762",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-logger": "^1.0"
+            },
+            "time": "2024-06-26T23:59:49+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreNet\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Network Toolkit Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreNet/issues",
+                "source": "https://github.com/LaswitchTech/coreNet/tree/v1.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-net"
+        },
+        {
+            "name": "laswitchtech/core-router",
+            "version": "v1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreRouter.git",
+                "reference": "fac24b82f637ecd292966c6907057aa89383b36a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreRouter/zipball/fac24b82f637ecd292966c6907057aa89383b36a",
+                "reference": "fac24b82f637ecd292966c6907057aa89383b36a",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-base": "^1.1",
+                "laswitchtech/core-locale": "^1.0"
+            },
+            "time": "2024-08-01T23:47:00+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreRouter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Router Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreRouter/issues",
+                "source": "https://github.com/LaswitchTech/coreRouter/tree/v1.0.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../laswitchtech/core-router"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

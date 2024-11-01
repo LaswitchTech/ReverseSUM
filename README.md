@@ -1,20 +1,35 @@
-# ReverseSUM
-This PHP code calculates the reverse sum of a given total. This is usefull when you are looking for all the invoices lines that would equal a total on recap for example.
+<p align="center"><img src="dist/img/logo.png" /></p>
 
-## Demo
-Demo Site: http://sum.albgroupe.com
+# ReverseSUM
+![License](https://img.shields.io/github/license/LaswitchTech/ReverseSUM?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/LaswitchTech/ReverseSUM?style=for-the-badge&logo=github)
+![GitHub top language](https://img.shields.io/github/languages/top/LaswitchTech/ReverseSUM?style=for-the-badge)
+![Version](https://img.shields.io/github/v/release/LaswitchTech/ReverseSUM?label=Version&style=for-the-badge)
+
+## Description
+This web application is a versatile tool designed to find all possible combinations of individual line values that match given target totals. Users can input lists of totals and individual values, and the application will determine which combinations of values add up to each total. This is particularly useful for reconciling invoice lines, budget calculations, or any situation requiring a reverse sum breakdown of totals.
+
+## Features
+  - **Versatile Combination Finder**: Determine all possible combinations of individual values that match given target totals, making it ideal for situations like reconciling invoice lines, budget calculations, or reverse sum breakdowns.
+  - **Simple Hosting Requirements**: Easily hosted on any web server that supports `.htaccess` files. No complex setup or dependencies needed.
+  - **Bilingual Support**: Available in both English and French, making it accessible to a wider range of users.
+  - **User-Friendly Interface**: Intuitive and easy-to-use interface for quickly inputting lists of totals and individual values.
+  - **Highlight Matching Results**: Easily highlight matching results by pressing individual values or full lines, making it convenient to visualize combinations.
+  - **Open Source & Free**: The application is entirely open source and free to use, allowing anyone to host and modify it to suit their needs.
 
 ## License
-GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+This software is distributed under the [MIT](LICENSE) license.
 
-## Copyright
-Copyright © 2019-2020 ALB Compagnie International. All rights reserved.
+## Security
+Please disclose any vulnerabilities found responsibly – report security issues to the maintainers privately. See [SECURITY.md](SECURITY.md) for more information.
 
-## Install/Use
-Simply upload to a web server and direct your browser to it.
+## Contributing
+Contributions to ReverseSUM are welcome! If you have ideas for new features or have found bugs, please open an issue or submit a pull request.
 
-## Changelog
-### Version 1.1
-#### Features
- * 2020-03-02 - Adding a "Remove" button to remove the selected result from the "Lines" field.
- * 2020-03-02 - Adding a "No Limit" limit by setting Max Iteration to 0.
+### How to Contribute
+  - **Fork the Repository**: Create a fork of the repository on GitHub.
+  - **Create a New Branch**: For new features or bug fixes, create a new branch in your fork.
+  - **Submit a Pull Request**: Once your changes are ready, submit a pull request to the main repository.
+
+## Wait, where is the documentation?
+Review the [Documentation](https://laswitchtech.com/en/blog/projects/reversesum/index).

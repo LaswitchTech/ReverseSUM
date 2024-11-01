@@ -1,0 +1,14 @@
+/.github
+/build
+/demos
+/dist/cdn
+/external
+/tests
+/Gruntfile.js
+
+.csslintrc
+.editorconfig
+.eslintrc.json
+.eslintignore
+.gitattributes
+.mailmap

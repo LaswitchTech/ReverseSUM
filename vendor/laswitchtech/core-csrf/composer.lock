@@ -1,0 +1,108 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "ebff8f11adb2c8e4dd68636c4295e129",
+    "packages": [
+        {
+            "name": "laswitchtech/core-configurator",
+            "version": "v1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreConfigurator.git",
+                "reference": "94e7ba1fda0dd66e94e0aa39d3230b99f78daa65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreConfigurator/zipball/94e7ba1fda0dd66e94e0aa39d3230b99f78daa65",
+                "reference": "94e7ba1fda0dd66e94e0aa39d3230b99f78daa65",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreConfigurator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Configurator Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreConfigurator/issues",
+                "source": "https://github.com/LaswitchTech/coreConfigurator/tree/v1.1.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-26T23:53:53+00:00"
+        },
+        {
+            "name": "laswitchtech/core-logger",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaswitchTech/coreLogger.git",
+                "reference": "cc77f55daf55ee27565d160819683c2e4673d48f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaswitchTech/coreLogger/zipball/cc77f55daf55ee27565d160819683c2e4673d48f",
+                "reference": "cc77f55daf55ee27565d160819683c2e4673d48f",
+                "shasum": ""
+            },
+            "require": {
+                "laswitchtech/core-configurator": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "LaswitchTech\\coreLogger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Louis Ouellet",
+                    "email": "louis_ouellet@hotmail.com"
+                }
+            ],
+            "description": "Logger Library for the Laswitch Core Framework",
+            "support": {
+                "issues": "https://github.com/LaswitchTech/coreLogger/issues",
+                "source": "https://github.com/LaswitchTech/coreLogger/tree/v1.0.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/LaswitchTech",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-06-26T23:58:30+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}

@@ -1,0 +1,60 @@
+### RoadMap
+- [X] Initialize the project
+    - [X] Add `.editorconfig`
+    - [X] Add `.gitignore`
+    - [X] Add `.github/ISSUE_TEMPLATE/bug_report.md`
+    - [X] Add `.github/ISSUE_TEMPLATE/feature_request.md`
+    - [X] Add `.github/no-response.yml`
+    - [X] Add `SECURITY.md`
+        - [X] Update links in `SECURITY.md`
+    - [X] Add `TODO`
+    - [X] Add `VERSION`
+    - [X] Add `dist/img/logo.png`
+    - [X] Update `README.md`
+    - [X] Create directory `src`
+    - [X] Create directory `docs`
+    - [X] Create directory `example`
+    - [X] Initialize Composer `composer init`
+    - [X] Dump autoload `composer dump-autoload`
+    - [-] Update requirements in `config/requirements.cfg`
+    - [X] Remove any credentials in the project
+    - [X] Perform initial push to GitHub
+    - [X] Create `stable` branch from `dev` branch on GitHub
+    - [X] Set `stable` branch as default branch on GitHub
+    - [X] Create a package on Packagist
+    - [X] Create a release on GitHub
+- [-] Create the core class
+    - [-] Create the `Core` class
+    - [-] Create the `Core` class constructor
+    - [-] Create the `Core` class destructor
+    - [-] Create the `Core` class methods
+    - [-] Create the `Core` class properties
+    - [-] Create the `Core` class constants
+    - [-] Create the `Core` class annotations
+- [-] Integrations
+    - [-] Integration with coreLogger
+        - [-] Use the Logger class to log messages and provide feedback
+    - [-] Integration with coreConfigurator
+        - [-] Use the Configurator class to load the configuration
+    - [-] Integration with coreInstaller
+        - [-] Create the `isInstalled` method in the `Core` class (optional)
+    - [-] Integration with coreCLI
+        - [-] Create a `Command` class to handle CLI commands
+    - [-] Integration with coreAPI
+        - [-] Create a `Controller` class to handle API requests
+    - [X] Integration with coreRouter
+        - [-] Create a `Controller` class to handle HTTP requests
+- [X] Documentations
+    - [X] Create the `docs/usage.md` file
+    - [X] Add the list of properties in `docs/usage.md`
+    - [-] Create the directory `docs/methods`
+    - [-] Create a directory for each class in `docs/methods`
+    - [-] Create a markdown file for each method in `docs/methods/{class}`
+- [X] Clean up the code
+    - [X] Remove unnecessary files
+    - [X] Remove unnecessary code
+    - [X] Remove unnecessary comments
+    - [X] Remove unnecessary dependencies
+    - [X] Fix coding standards
+    - [X] Add method annotations
+- [X] Ready to publish

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "laswitchtech/core-router": "^1.0",
+        "laswitchtech/core-bootstrap": "^1.0"
+    }
+}

@@ -1,0 +1,41 @@
+# Composer
+composer.phar
+*composer.phar
+/vendor/
+
+# Mac OS X
+.DS_Store
+*.DS_Store
+
+# Git
+.git
+
+# Filetypes
+*.cfg
+*.log
+
+# Exclude Files
+!/config/requirements.cfg
+
+# Exclude Locales Configurations and Translations
+!Locale/*/*.cfg
+
+# Unique Directories
+/tmp/
+/data/
+
+# Apache
+.htaccess
+/webroot/
+
+# Backups
+/backup/
+
+# Example Files
+/example/vendor/
+
+# Custom Module Files
+
+# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock

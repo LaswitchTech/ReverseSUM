@@ -1,0 +1,25 @@
+// Opacity
+
+$count: 0;
+@while $count < 10 {
+  $index: 10 * $count;
+  $value: calc($count / 10);
+
+  .opacity-#{$index} {
+    opacity: $value;
+  }
+
+  $count: $count + 1;
+}
+
+$count: 0;
+@while $count < 4 {
+  $index: 25 * $count;
+  $value: calc($index / 100);
+
+  .opacity-#{$index} {
+    opacity: $value;
+  }
+
+  $count: $count + 1;
+}

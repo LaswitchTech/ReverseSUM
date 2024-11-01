@@ -1,0 +1,30 @@
+// Functions
+
+@use "sass:math";
+
+@function color-contrast($background) {
+    // Calculate the perceptive luminance of the background color
+    // This gives a weight to each of the RGB components
+    $luminance: math.div((0.299 * red($background) + 0.587 * green($background) + 0.114 * blue($background)), 255);
+
+    // Return $dark for bright colors and $light for dark colors
+    @if ($luminance > 0.5) {
+        @return $dark;
+    } @else {
+        @return $light;
+    }
+}
+
+@function textColor($bgColor) {
+	$red: red($bgColor);
+	$green: green($bgColor);
+	$blue: blue($bgColor);
+
+	$luminance: 0.2126 * math.div($red, 255) + 0.7152 * math.div($green, 255) + 0.0722 * math.div($blue, 255);
+
+	@if ($luminance > 0.7) {
+		@return $dark;
+	} @else {
+		@return $light;
+	}
+}

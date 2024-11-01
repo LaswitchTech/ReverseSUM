@@ -1,0 +1,55 @@
+# Task List
+## RoadMap
+- [X] Initialize the project
+- [X] Make requirement of coreAuth optional
+## Publishing Tasks
+- [X] Initialize the project
+    - [X] Add `.editorconfig`
+    - [X] Add `.gitignore`
+    - [X] Add `.github/ISSUE_TEMPLATE/bug_report.md`
+    - [X] Add `.github/ISSUE_TEMPLATE/feature_request.md`
+    - [X] Add `.github/FUNDING.yml`
+    - [X] Add `.github/no-response.yml`
+    - [X] Add `SECURITY.md`
+        - [X] Update links in `SECURITY.md`
+    - [X] Add `TODO`
+    - [X] Add `VERSION`
+    - [X] Add `dist/img/logo.png`
+    - [X] Update `README.md`
+    - [X] Create directory `src`
+    - [X] Create directory `docs`
+    - [X] Create directory `example`
+    - [X] Initialize Composer `composer init`
+    - [X] Dump autoload `composer dump-autoload`
+    - [X] Update requirements in `config/requirements.cfg`
+    - [X] Remove any credentials in the project
+    - [X] Perform initial push to GitHub
+    - [X] Create `stable` branch from `dev` branch on GitHub
+    - [X] Set `stable` branch as default branch on GitHub
+    - [X] Create a package on Packagist
+    - [X] Create a release on GitHub
+- [X] Create the core class
+    - [X] Create the `Core` class
+    - [X] Create the `Core` class methods
+- [X] Integrations
+    - [X] Integration with **coreLogger**
+        - [X] Use the Logger class to log messages and provide feedback
+    - [X] Integration with **coreConfigurator**
+        - [X] Use the Configurator class to load the configuration
+        - [-] Create a `config/configurator.cfg` file to store the form layout for the configurator
+    - [X] Integration with **coreInstaller**
+        - [X] Create the `isInstalled` method in the `Core` class (optional)
+- [X] Documentations
+    - [X] Create the `docs/usage.md` file
+    - [X] Add the list of properties in `docs/usage.md`
+    - [-] Create the directory `docs/methods`
+    - [-] Create a directory for each class in `docs/methods`
+    - [-] Create a markdown file for each method in `docs/methods/{class}`
+- [X] Clean up the code
+    - [X] Remove unnecessary files
+    - [X] Remove unnecessary code
+    - [X] Remove unnecessary comments
+    - [X] Remove unnecessary dependencies
+    - [X] Fix coding standards
+    - [X] Add method annotations
+- [X] Ready to publish

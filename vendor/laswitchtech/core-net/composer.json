@@ -1,0 +1,21 @@
+{
+    "name": "laswitchtech/core-net",
+    "description": "Network Toolkit Library for the Laswitch Core Framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LaswitchTech\\coreNet\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Louis Ouellet",
+            "email": "louis_ouellet@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "laswitchtech/core-logger": "^1.0"
+    }
+}

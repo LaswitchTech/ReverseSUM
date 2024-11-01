@@ -1,0 +1,21 @@
+{
+    "name": "laswitchtech/core-logger",
+    "description": "Logger Library for the Laswitch Core Framework",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "LaswitchTech\\coreLogger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Louis Ouellet",
+            "email": "louis_ouellet@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "laswitchtech/core-configurator": "^1.0"
+    }
+}
