@@ -1,1 +1,0 @@
-playground-avatar.js
