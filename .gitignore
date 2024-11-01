@@ -1,7 +1,7 @@
 # Composer
 composer.phar
 *composer.phar
-#/vendor/
+/vendor/
 
 # Mac OS X
 .DS_Store
