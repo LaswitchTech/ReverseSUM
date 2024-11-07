@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # Fetch full commit history for accessing all tags
+          fetch-depth: 0
 
       - name: Set Tag as Filename
         id: tag_name
@@ -47,7 +47,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
-          body_path: ./CHANGELOG.md  # Use the generated changelog as release notes
+          body_path: ./CHANGELOG.md
 
       - name: Upload Asset
         uses: actions/upload-release-asset@v1
