@@ -33,3 +33,6 @@ Contributions to ReverseSUM are welcome! If you have ideas for new features or h
 
 ## Wait, where is the documentation?
 Review the [Documentation](https://laswitchtech.com/en/blog/projects/reversesum/index).
+
+## GitHub Stats
+![Alt](https://repobeats.axiom.co/api/embed/8eba4e7b8765e2486a0cf4cdd6a77444afaeff6e.svg "Repobeats analytics image")
