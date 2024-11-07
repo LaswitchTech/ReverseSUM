@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Fetch full commit history for accessing all tags
 
       - name: Set Tag as Filename
         id: tag_name
@@ -22,12 +24,16 @@ jobs:
       - name: Generate Changelog
         id: generate_changelog
         run: |
-          # Get the list of commit messages since the last tag
+          # Find the most recent tag before the current one
           PREV_TAG=$(git describe --tags --abbrev=0 HEAD^)
+
+          # Create a new CHANGELOG.md file with headers
           echo -e "# Changelog\n" > CHANGELOG.md
+
+          # List commit messages between the previous tag and current HEAD
           git log ${PREV_TAG}..HEAD --pretty=format:"* %s" >> CHANGELOG.md
 
-          # Get the list of contributors for these commits
+          # List unique contributors for these commits
           echo -e "\n\n# Contributors\n" >> CHANGELOG.md
           git log ${PREV_TAG}..HEAD --format='%aN' | sort -u | awk '{print "* " $0}' >> CHANGELOG.md
 
