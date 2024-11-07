@@ -58,6 +58,9 @@ class CalculateController extends BaseController {
 
         // Namespace: /calculate/post
 
+        // Increase the maximum execution time
+        ini_set('max_execution_time', 300); // 5 minutes
+
         // Initialize the variables
         $results = [];
 
