@@ -59,13 +59,13 @@ class CalculateController extends BaseController {
         // Namespace: /calculate/post
 
         // Increase the Maximum Input Parsing Time
-        ini_set('max_input_time', 600); // 10 minutes
+        ini_set('max_input_time', 6000); // 100 minutes
 
         // Increase the maximum execution time
-        ini_set('max_execution_time', 600); // 10 minutes
+        ini_set('max_execution_time', 6000); // 100 minutes
 
         // Increase the time limit
-        set_time_limit(600); // 10 minutes
+        set_time_limit(6000); // 100 minutes
 
         // Increase the memory limit
         ini_set('memory_limit', '1024M');
