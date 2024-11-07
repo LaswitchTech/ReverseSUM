@@ -58,11 +58,17 @@ class CalculateController extends BaseController {
 
         // Namespace: /calculate/post
 
-        // Increase the maximum execution time
-        ini_set('max_execution_time', 3000); // 50 minutes
+        // Increase the Maximum Input Parsing Time
+        ini_set('max_input_time', 600); // 10 minutes
 
-        // Increase the timeout limit
-        set_time_limit(3000); // 50 minutes
+        // Increase the maximum execution time
+        ini_set('max_execution_time', 600); // 10 minutes
+
+        // Increase the time limit
+        set_time_limit(600); // 10 minutes
+
+        // Increase the memory limit
+        ini_set('memory_limit', '1024M');
 
         // Initialize the variables
         $results = [];
