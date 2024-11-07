@@ -19,6 +19,18 @@ jobs:
       - name: Create ZIP file
         run: zip -r "${{ env.TAG_NAME }}.zip" .
 
+      - name: Generate Changelog
+        id: generate_changelog
+        run: |
+          # Get the list of commit messages since the last tag
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^)
+          echo -e "# Changelog\n" > CHANGELOG.md
+          git log ${PREV_TAG}..HEAD --pretty=format:"* %s" >> CHANGELOG.md
+
+          # Get the list of contributors for these commits
+          echo -e "\n\n# Contributors\n" >> CHANGELOG.md
+          git log ${PREV_TAG}..HEAD --format='%aN' | sort -u | awk '{print "* " $0}' >> CHANGELOG.md
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -29,6 +41,7 @@ jobs:
           release_name: Release ${{ github.ref }}
           draft: false
           prerelease: false
+          body_path: ./CHANGELOG.md  # Use the generated changelog as release notes
 
       - name: Upload Asset
         uses: actions/upload-release-asset@v1
