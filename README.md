@@ -34,5 +34,8 @@ Contributions to ReverseSUM are welcome! If you have ideas for new features or h
 ## Wait, where is the documentation?
 Review the [Documentation](https://laswitchtech.com/en/blog/projects/reversesum/index).
 
+## What about the download button?
+The download button is available [here](https://github.com/LaswitchTech/reversesum/releases/latest/download/source.zip).
+
 ## GitHub Stats
 ![Alt](https://repobeats.axiom.co/api/embed/8eba4e7b8765e2486a0cf4cdd6a77444afaeff6e.svg "Repobeats analytics image")
